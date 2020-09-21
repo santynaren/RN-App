@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     // backgroundColor: 'white',
   },
   footerSlide: {
-    flexDirection: 'row',
+    flex:1,
     borderTopLeftRadius: 75,
     backgroundColor: 'white',
   },
@@ -74,33 +74,33 @@ const Onboarding = () => {
         <Animated.View
           style={{...StyleSheet.absoluteFillObject, backgroundColor}}
         />
-        <Animated.View
-          style={[
-            styles.footerSlide,
-            {
+        <View style={styles.footerSlide}>
+          <Animated.View
+            style={{
               width: width * SLIDE_ITEMS.length,
               flex: 1,
+              flexDirection: 'row',
               transform: [{translateX: multiply(x, -1)}],
-            },
-          ]}>
-          {SLIDE_ITEMS.map((slideItem, index) => {
-            return (
-              <FooterSlide
-                x={x}
-                onPress={() => {
-                  if (Scrollref.current) {
-                    Scrollref.current
-                      .getNode()
-                      .scrollTo({x: width * (index + 1), animated: true});
-                  }
-                }}
-                last={index === SLIDE_ITEMS.length - 1}
-                header={slideItem.header}
-                headerCaption={slideItem.headerCaption}
-              />
-            );
-          })}
-        </Animated.View>
+            }}>
+            {SLIDE_ITEMS.map((slideItem, index) => {
+              return (
+                <FooterSlide
+                  x={x}
+                  onPress={() => {
+                    if (Scrollref.current) {
+                      Scrollref.current
+                        .getNode()
+                        .scrollTo({x: width * (index + 1), animated: true});
+                    }
+                  }}
+                  last={index === SLIDE_ITEMS.length - 1}
+                  header={slideItem.header}
+                  headerCaption={slideItem.headerCaption}
+                />
+              );
+            })}
+          </Animated.View>
+        </View>
       </View>
     </View>
   );
