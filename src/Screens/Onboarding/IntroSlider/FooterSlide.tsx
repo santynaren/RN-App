@@ -11,13 +11,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 24,
     textAlign: 'center',
+    
 
     // backgroundColor: 'cyan',
   },
 
   footer: {
     flex: 1,
-    // backgroundColor: 'white',
+    backgroundColor: 'white',
   },
   header: {
     fontSize: 24,

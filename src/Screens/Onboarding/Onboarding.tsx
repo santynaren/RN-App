@@ -44,7 +44,7 @@ const Onboarding = () => {
   const x = useValue(0);
   const backgroundColor = interpolateColor(x, {
     inputRange: SLIDE_ITEMS.map((_, i) => i * width),
-    outputRange: SLIDE_ITEMS.map((slide, i) => slide.color),
+    outputRange: SLIDE_ITEMS.map((slide) => slide.color),
   });
   const onScroll = onScrollEvent({x});
   return (
@@ -71,11 +71,12 @@ const Onboarding = () => {
         </Animated.ScrollView>
       </Animated.View>
       <View style={styles.footer}>
-        <View style={{...StyleSheet.absoluteFillObject, backgroundColor}} />
+        <Animated.View
+          style={{...StyleSheet.absoluteFillObject, backgroundColor}}
+        />
         <Animated.View
           style={[
             styles.footerSlide,
-            // eslint-disable-next-line react-native/no-inline-styles
             {
               width: width * SLIDE_ITEMS.length,
               flex: 1,
