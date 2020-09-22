@@ -1,6 +1,8 @@
 import React from 'react';
-import {View, Text, StyleSheet, Button, Dimensions} from 'react-native';
+import {View, StyleSheet, Button, Dimensions} from 'react-native';
+import {Text} from '../../../Config/theme';
 import Animated from 'react-native-reanimated';
+
 import {ScrollView} from 'react-native-gesture-handler';
 import AppButton from '../../../Legos/AppButton';
 const {width, height} = Dimensions.get('window');
@@ -45,8 +47,8 @@ const FooterSlide = ({
 }: FooterSliderProps) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>{header}</Text>
-      <Text style={styles.headerCaption}>{headerCaption}</Text>
+      <Text variant="heading4">{header}</Text>
+      <Text variant="heading6">{headerCaption}</Text>
       <AppButton
         title={last ? 'lets get started' : 'Next'}
         varaint={last ? 'primary' : 'default'}

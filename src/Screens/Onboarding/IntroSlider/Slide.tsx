@@ -1,5 +1,6 @@
 import React from 'react';
-import {View, Text, StyleSheet, Dimensions} from 'react-native';
+import {View, StyleSheet, Dimensions} from 'react-native';
+import {Text} from '../../../../src/Config/theme';
 import {ScrollView} from 'react-native-gesture-handler';
 const {width, height} = Dimensions.get('window');
 const styles = StyleSheet.create({
@@ -39,7 +40,7 @@ const Slide = ({label, right}: SliderProps) => {
   return (
     <View style={styles.container}>
       <View style={[styles.headingContainer, {transform}]}>
-        <Text style={styles.heading}>{label}</Text>
+        <Text  variant="heading1" >{label}</Text>
       </View>
     </View>
   );
