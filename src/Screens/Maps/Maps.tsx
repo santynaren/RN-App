@@ -21,9 +21,13 @@ const Maps = () => {
         latitudeDelta: 0.0922,
         longitudeDelta: 0.0421,
       }}>
-      {TUTOR_CORDINATES.map((tutor, index) => {
+      {TUTOR_CORDINATES.map((tutor) => {
         return (
-          <Marker key={index} title={tutor.label} coordinate={tutor.coordinate}>
+          <Marker coordinate={tutor.coordinate}>
+               <Avatar
+              size="small"
+              source={require('../../assets/images/general/logo.png')}
+            />
             <Callout>
               <Box
                 flex={1}
@@ -38,10 +42,7 @@ const Maps = () => {
                 </Box>
               </Box>
             </Callout>
-            <Avatar
-              size="small"
-              source={require('../../assets/images/general/logo.png')}
-            />
+           
           </Marker>
         );
       })}
