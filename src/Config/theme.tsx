@@ -20,6 +20,7 @@ const theme: BaseTheme = createTheme({
     primaryColor: '#2cb9b0',
     secondaryColor: '#e7e7e7',
     grey: '#a9a9a9',
+    danger: '#f00',
     blackColor: palette.black,
     whiteColor: palette.white,
     headingColor: palette.black,

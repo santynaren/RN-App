@@ -2,7 +2,7 @@ import React from 'react';
 import {View} from 'react-native';
 import {Text, Box} from '../../Config/theme';
 import AppButton from '../../Legos/AppButton';
-const Welcome = () => {
+const Welcome = ({navigation}) => {
   return (
     <Box flex={1} backgroundColor="whiteColor">
       <Box
@@ -21,14 +21,26 @@ const Welcome = () => {
           right={0}
           left={0}
         />
-        <Box backgroundColor="whiteColor" borderTopLeftRadius={75} justifyContent="space-evenly" alignItems="center" padding="xl" flex={1}>
-          <Text  variant="heading4">Let's get Started</Text>
+        <Box
+          backgroundColor="whiteColor"
+          borderTopLeftRadius={75}
+          justifyContent="space-evenly"
+          alignItems="center"
+          padding="xl"
+          flex={1}>
+          <Text variant="heading4">Let's get Started</Text>
           <Text variant="heading6">
             Login to your account or Signup and experience new learning
           </Text>
-        <AppButton varaint="primary" title="Login"/>
-        <AppButton varaint="default" title="Join us, It's free"/>
-        <AppButton varaint="transparent" title="Forgot Password ?"/>
+          <AppButton
+            onPress={() => {
+              navigation.navigate('Login');
+            }}
+            varaint="primary"
+            title="Login"
+          />
+          <AppButton varaint="default" title="Join us, It's free" />
+          <AppButton varaint="transparent" title="Forgot Password ?" />
         </Box>
       </Box>
     </Box>

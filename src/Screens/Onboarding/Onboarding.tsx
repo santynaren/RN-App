@@ -77,10 +77,11 @@ const Onboarding = ({
           showsHorizontalScrollIndicator={false}
           bounces={false}
           {...{onScroll}}>
-          {SLIDE_ITEMS.map((slideItem) => {
+          {SLIDE_ITEMS.map((slideItem, index) => {
             console.log(slideItem);
             return (
               <Slide
+                key={index}
                 label={slideItem.label}
                 right={slideItem.right ? true : false}
               />
@@ -113,6 +114,7 @@ const Onboarding = ({
               return (
                 <FooterSlide
                   x={x}
+                  key={index}
                   onPress={() => {
                     if (last) {
                       navigation.navigate('Welcome');
@@ -122,7 +124,7 @@ const Onboarding = ({
                         .scrollTo({x: width * (index + 1), animated: true});
                     }
                   }}
-                  last = {last}
+                  last={last}
                   header={slideItem.header}
                   headerCaption={slideItem.headerCaption}
                 />
