@@ -34,7 +34,7 @@ const Welcome = ({navigation}) => {
           </Text>
           <AppButton
             onPress={() => {
-              navigation.navigate('Login');
+              navigation.navigate('Maps');
             }}
             varaint="primary"
             title="Login"
