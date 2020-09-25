@@ -34,12 +34,18 @@ const Welcome = ({navigation}) => {
           </Text>
           <AppButton
             onPress={() => {
-              navigation.navigate('Maps');
+              navigation.navigate('Login');
             }}
             varaint="primary"
             title="Login"
           />
-          <AppButton varaint="default" title="Join us, It's free" />
+          <AppButton
+            varaint="default"
+            onPress={() => {
+              navigation.navigate('Signup');
+            }}
+            title="Join us, It's free"
+          />
           <AppButton varaint="transparent" title="Forgot Password ?" />
         </Box>
       </Box>

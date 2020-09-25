@@ -50,6 +50,7 @@ const TextInput = ({icon, validator, ...props}: TextInputProps) => {
       <Box flex={1}>
         <RNTextInput
           {...props}
+          secureTextEntry={true}
           placeholderTextColor="#000"
           onBlur={validate}
           {...{onChangeText}}

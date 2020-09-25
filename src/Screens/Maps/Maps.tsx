@@ -24,7 +24,7 @@ const Maps = () => {
       {TUTOR_CORDINATES.map((tutor) => {
         return (
           <Marker coordinate={tutor.coordinate}>
-               <Avatar
+            <Avatar
               size="small"
               source={require('../../assets/images/general/logo.png')}
             />
@@ -42,7 +42,6 @@ const Maps = () => {
                 </Box>
               </Box>
             </Callout>
-           
           </Marker>
         );
       })}
